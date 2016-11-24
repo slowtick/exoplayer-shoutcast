@@ -1,6 +1,20 @@
 # exoplayer-shoutcast
 Shoutcast data source extension for Exoplayer with metadata support.
 
+#Installation (Gradle)
+Add 'jitpack.io' as maven repository to build.gradle (project level)
+```java
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+Add github project path as dependency to build.gradle (module level)
+```java
+compile 'com.github.mattias-karlsson:exoplayer-shoutcast:master'
+```
 # Usage
 
 ```java
