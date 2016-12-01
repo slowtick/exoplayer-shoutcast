@@ -17,7 +17,7 @@ allprojects {
 ```
 Add github project path as dependency to build.gradle (module level)
 ```java
-compile 'com.github.mattias-karlsson:exoplayer-shoutcast:master'
+compile 'com.github.mattias-karlsson:exoplayer-shoutcast:1.0.0'
 ```
 # Usage
 
