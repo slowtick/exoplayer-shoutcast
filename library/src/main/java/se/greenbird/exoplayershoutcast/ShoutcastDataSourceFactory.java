@@ -17,6 +17,7 @@
 package se.greenbird.exoplayershoutcast;
 
 import com.google.android.exoplayer2.upstream.DataSource;
+import com.google.android.exoplayer2.upstream.HttpDataSource;
 import com.google.android.exoplayer2.upstream.HttpDataSource.Factory;
 import com.google.android.exoplayer2.upstream.TransferListener;
 
@@ -26,7 +27,7 @@ import okhttp3.Call;
 /**
  * A {@link Factory} that produces {@link ShoutcastDataSource}.
  */
-public final class ShoutcastDataSourceFactory implements Factory {
+public final class ShoutcastDataSourceFactory extends HttpDataSource.BaseFactory {
 
     private final Call.Factory callFactory;
     private final String userAgent;
@@ -51,7 +52,7 @@ public final class ShoutcastDataSourceFactory implements Factory {
     }
 
     @Override
-    public ShoutcastDataSource createDataSource() {
+    protected HttpDataSource createDataSourceInternal(HttpDataSource.RequestProperties requestProperties) {
         return new ShoutcastDataSource(callFactory, userAgent, null, transferListener, shoutcastMetadataListener, cacheControl);
     }
 
